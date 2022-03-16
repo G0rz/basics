@@ -36,17 +36,17 @@ const arr2 = arr.slice();
 
 const arrGeneral = arr.concat(arr2);
 
-console.log(arrGeneral)
-
 var json = JSON.parse(JSON.stringify(arrGeneral));
 
 var totalVentas = json.reduce((sum, value) => (typeof value.ventas == "number" ? sum + value.ventas : sum), 0);
 
 console.log('Cantidad Total de Ventas:', totalVentas);
 
-let pastelerias = arrGeneral.map(element => {
+let pastelerias = []
+
+arrGeneral.map(element => {
   if (element.nombre.substr(0, 6) === 'Pastel') {
-    return element
+    return pastelerias.push(element);
   } else {
     return "No es pasteleria"
   }
