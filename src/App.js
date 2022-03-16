@@ -47,6 +47,8 @@ console.log('Cantidad Total de Ventas:', totalVentas);
 let pastelerias = arrGeneral.map(element => {
   if (element.nombre.substr(0, 6) === 'Pastel') {
     return element
+  } else {
+    return "No es pasteleria"
   }
 });
 
