@@ -44,11 +44,13 @@ var totalVentas = json.reduce((sum, value) => (typeof value.ventas == "number" ?
 
 console.log('Cantidad Total de Ventas:', totalVentas);
 
-arrGeneral.map(element => {
+let pastelerias = arrGeneral.map(element => {
   if (element.nombre.substr(0, 6) === 'Pastel') {
-    return console.log(element)
+    return element
   }
 });
+
+console.log(pastelerias);
 
 export default function App() {
 
