@@ -44,6 +44,11 @@ var totalVentas = json.reduce((sum, value) => (typeof value.ventas == "number" ?
 
 console.log('Cantidad Total de Ventas:', totalVentas);
 
+arrGeneral.map(element => {
+  if (element.nombre.substr(0, 6) === 'Pastel') {
+    return console.log(element)
+  }
+});
 
 export default function App() {
 
@@ -65,6 +70,25 @@ export default function App() {
               {arrGeneral.map(item => (
                 <Item key={item} item={item} />
               ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Container>
+      <Container maxWidth="md">
+        <TableContainer component={Paper}>
+          <h1>14vo registro:</h1>
+          <Table aria-label="simple table2">
+            <TableHead>
+              <TableRow>
+                <TableCell>Id</TableCell>
+                <TableCell>FAlta</TableCell>
+                <TableCell>Nombre</TableCell>
+                <TableCell>Venta</TableCell>
+                <TableCell>Total</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <Item item={arrGeneral[14]} />
             </TableBody>
           </Table>
         </TableContainer>
